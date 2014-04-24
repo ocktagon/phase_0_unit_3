@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Unit 3: SQL and Review
 
 Unit 3 only has one week of new material and two weeks of collaborative review. Each week will be released on Monday and will be due on the following Sunday at 11:59pm.
@@ -14,3 +15,7 @@ Unit 3 only has one week of new material and two weeks of collaborative review. 
 #### How to navigate this repository
 If you would like to open tabs in a new window, please either right click or hold command while you click. 
 
+=======
+phase_0_unit_3
+==============
+>>>>>>> FETCH_HEAD
