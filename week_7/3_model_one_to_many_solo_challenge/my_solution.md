@@ -40,21 +40,21 @@ A one-to-many relationship.  A user can have many tweets, but one tweet will not
 ## Release 4: SQL Statements
 <!-- Include your SQL Statements. How can you make markdown files show blocks of code? -->
 
-- all the tweets for a certain user id
+- all the tweets for a certain user id<br />
 select * from tweets
 where user_id = 'blah'
 
-- the tweets for a certain user id that were made after last Wednesday (whenever last Wednesday was for you)
+- the tweets for a certain user id that were made after last Wednesday (whenever last Wednesday was for you)<br />
 select * from tweets
 where user_id = "blah" and 
 created_at > 04/23/2014
 
-- all the tweets associated with a given user's twitter handle
+- all the tweets associated with a given user's twitter handle<br />
 select tweet, location, photo
 from tweets join users on (user_id = id)
 where username = 'aki'
 
-- the twitter handle associated with a given tweet id 
+- the twitter handle associated with a given tweet id<br /> 
 select username from users
 where id = 'blah'
 
