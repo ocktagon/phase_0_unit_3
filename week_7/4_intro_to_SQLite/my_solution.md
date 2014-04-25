@@ -14,11 +14,17 @@
 
 ## Release 3: Add a column
 <!-- paste your terminal output here -->
-<img src="../imgs/sqlite3.png" />
+<img src="../imgs/sqlite3.png" /><br />
+<img src="../imgs/sqlite4.png" />
 
 ## Release 4: Change a value
 <!-- paste your terminal output here -->
-<img src="../imgs/sqlite4.png" />
+<img src="../imgs/sqlite5.png" />
 
 ## Release 5: Reflect
 <!-- Add your reflection here -->
+Learning basic commands on sqlite was easy after learning sql commands early on.  As for syntax, it's really hard to memorize all of this so I'm having trouble with that.  
+
+I am worried that I don't yet know how to manipulate
+big data dumps, and would like to learn that sooner than later as that would be a common task when using sqlite.  
+
