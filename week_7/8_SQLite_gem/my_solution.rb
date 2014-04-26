@@ -71,10 +71,23 @@ print_some_states
 
 
 # REFLECTION- Include your reflection as a comment below.
-# How does the sqlite3 gem work?  What is the variable `$db` holding?  
+# How does the sqlite3 gem work?  
+# The module allows Ruby programs to interface with the SQLite3 database engine 
+# Sqlite must be installed first for it to work.  Once installed, the engine can be tapped
+# by declaring it in a require statement in code. 
+
+# What is the variable `$db` holding?  
+# $db is holding a special command for a specific method open file blah under the Sqlite3::Database class. 
+
+
 # Try to use your knowledge of ruby and OO to decipher this as well as h
 # ow the `#execute` method works.  Take a stab at explaining the line 
 # `$db.execute("SELECT name FROM congress_members WHERE years_in_congress 
 #   > #{minimum_years}")`.  Try to explain this as clearly as possible for 
 # your fellow students.  
-# If you're having trouble, find someone to pair on this explanation with you.
+
+# $db has already opened the target database that we want to take actions on.  
+# The method execute allows us to execute a select statement to retrieve/manipulate data
+# in the target database.  This method can only be declared after ruby knows which db we 
+# want to use, thus why it has to be a method off of the $db variable we declared earlier. 
+
