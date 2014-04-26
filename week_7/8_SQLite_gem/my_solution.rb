@@ -1,6 +1,6 @@
 # U3.W7: BONUS Using the SQLite Gem
 
-# I worked on this challenge [by myself, with:]
+# I worked on this challenge [by myself]
 
 require 'sqlite3'
 
@@ -16,12 +16,24 @@ end
 
 def print_longest_serving_reps(minimum_years)  #sorry guys, oracle needs me, i didn't finish this!
   puts "LONGEST SERVING REPRESENTATIVES"
-  puts $db.execute("SELECT name FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  lng_list = $db.execute("SELECT name, years_in_congress FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  lng_list.each {|item| puts "#{item[0]}" + " - " + "#{item[1]}" }
+
 end
 
-def print_lowest_grade_level_speakers
-  puts "LOWEST GRADE LEVEL SPEAKERS (less than < 8th grade)"
+def print_lowest_grade_level_speakers(grade)
+  puts "LOWEST GRADE LEVEL SPEAKERS (less than grade #{grade})"
+  puts $db.execute("SELECT name FROM congress_members WHERE grade_current < #{grade}")
+
 end
+
+def print_some_states
+	puts "NJ, NY, Maine, Florida, and Alaska"
+  state_list = $db.execute("SELECT name, party, location FROM congress_members WHERE location in ('NY', 'NJ', 'ME', 'FL', 'AK') order by location")
+	state_list.each {|item| puts "#{item[0]} - #{item[1]} - #{item[2]}"  }  
+
+end
+
 
 def print_separator
   puts 
@@ -35,15 +47,14 @@ print_arizona_reps
 print_separator
 
 print_longest_serving_reps(35)
-# TODO - Print out the number of years served as well as the name of the longest running reps
-# output should look like:  Rep. C. W. Bill Young - 41 years
 
 print_separator
-print_lowest_grade_level_speakers 
-# TODO - Need to be able to pass the grade level as an argument, look in schema for "grade_current" column
+print_lowest_grade_level_speakers(9)
+print_lowest_grade_level_speakers(8)
 
-# TODO - Make a method to print the following states representatives as well:
-# (New Jersey, New York, Maine, Florida, and Alaska)
+print_separator
+
+print_some_states
 
 
 ##### BONUS #######
