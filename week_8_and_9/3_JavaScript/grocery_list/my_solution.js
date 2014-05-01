@@ -17,7 +17,7 @@
 
 // 3. Initial Solution
 
-// Define a class like this
+// Define a class like this in JS
 function GroceryList(item, qty, price){
    this.item = item;
    this.qty = qty;
@@ -25,6 +25,7 @@ function GroceryList(item, qty, price){
    this.list = [[item,qty,price]]
 }
 
+//Methods within my class
 GroceryList.prototype.add = function(item, qty, price){
 	 this.list.push([item,qty,price])
 };
