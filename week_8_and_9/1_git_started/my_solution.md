@@ -8,37 +8,37 @@ Add file contents to the index
 List, create, or delete branches
 
 #### checkout
-<!-- Checkout a branch or paths to the working tree -->
+Checkout a branch or paths to the working tree
 
-#### clone
-<!-- Clone a repository into a new directory -->
+z3### clone
+Clone a repository into a new directory
 
 #### commit
-<!-- Record changes to the repository -->
+Record changes to the repository
 
 #### fetch
-<!-- Download objects and refs from another repository -->
+Download objects and refs from another repository
 
 #### log
-<!-- Show commit logs -->
+Show commit logs
 
 #### merge
-<!-- Join two or more development histories together -->
+Join two or more development histories together
 
 #### pull
-<!-- Fetch from and integrate with another repository or a local branch -->
+Fetch from and integrate with another repository or a local branch
 
 #### push
-<!-- pdate remote refs along with associated objects -->
+Update remote refs along with associated objects
 
 #### reset
-<!-- Reset current HEAD to the specified state-->
+Reset current HEAD to the specified state
 
 #### rm
-<!-- Remove files from the working tree and from the index -->
+Remove files from the working tree and from the index
 
 #### status
-<!-- show the working tree status -->
+show the working tree status --> -->
 
 ## Release 3: Git Workflow
 
