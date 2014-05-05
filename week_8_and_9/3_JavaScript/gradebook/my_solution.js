@@ -7,7 +7,7 @@ variables match (i.e., 'Joseph' is the first element in students; his scores are
 
 Do not alter the students and scores code.
 
-I worked on this challenge [by myself, with:]
+I worked on this challenge [by myself]
 
 */
 
@@ -18,31 +18,77 @@ var scores = [ [80, 70, 70, 100],
                [75, 70, 80, 75],
                [100, 90, 95, 85] ]
 
-
-
-
-
-
 // __________________________________________
 // Write your code below.
 
+// ## Release 0: Create a variable `average`
+// Assign it the value of a function... 
+
+// ## Release 1: Modify `average`
+// Have `average` accept an array of numbers and returns the average of those numbers
+
+function average(nums){
+  var sum = 0
+  for (var i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  };
+  average = sum/nums.length;
+  return average;  
+};
+
+// ## Release 2: Create `gradebook`
+// The variable `gradebook` and assign it the value of a new object
+// ## Release 3: Add property to `gradebook`
+// Make each student name in students a property of gradebook and assign each the value of a new object.
+
+var gradebook = new Object();
+
+gradebook.Joseph = new Object();
+gradebook.Susan = new Object();
+gradebook.William = new Object();
+gradebook.Elizabeth = new Object();
+
+// ## Release 4: `testScores`
+// Give each student property of gradebook its own testScores property and assign it the value of the respective students scores from scores.
+
+gradebook.Joseph.testScores = [80,85,75,100];
+gradebook.Susan.testScores = [70,80,70,90];
+gradebook.William.testScores = [70,90,80,95];
+gradebook.Elizabeth.testScores = [100,90,75,85];
 
 
+// ## Release 5: `addScore`
+// - addScore property to gradebook (assign it the value of a function that accepts name and score arguments)
+// - Have it push the score to the value of the testScore property of the gradebook property that matches the value of the name argument.  
+// For example, 
+//     gradebook.addScore("Susan", 80) // would push the score 80 into the value of gradebook.Susan.testScores.
 
+gradebook.addScore = function(name,score){
+  gradebook[name].testScores.push(score);
+};
 
+// ## Release 6: `getAverage`
+// A getAverage property to gradebook and assign it the value of a function ...
 
-// __________________________________________
-// Refactored Solution
+gradebook.getAverage = function(name){
+  return average(gradebook[name].testScores);
+};
 
-
-
-
-
-
+// ## Release 7: Modify `getAverage`
+// So that it accepts a name as a String (e.g., "Joseph") and returns the named students average.
 
 
 // __________________________________________
 // Reflect
+// The most troublesome problem I had when solving this was to point to the student test scores 
+// in the right way when I was was creating addScore and getAverage methods. 
+// For the longest time the function would not work properly when I did something like this:
+// function(name,score){
+//   gradebook.name.testScores.push(score);
+// }
+// After some research and looking at other student examples, finally realized that this notation
+// did not work, and had to put the name into bracket notation instead for the methods to work 
+// on the right objects.  This was a good learning to understand the mechanics of properties. 
 
 
 
