@@ -2,10 +2,10 @@
 Define the following commands and describe how they work/what they do.  
 
 #### add
-<!-- Add file contents to the index -->
+Add file contents to the index
 
 #### branch
-<!-- List, create, or delete branches -->
+List, create, or delete branches
 
 #### checkout
 <!-- Checkout a branch or paths to the working tree -->
