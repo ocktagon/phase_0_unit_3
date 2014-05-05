@@ -10,7 +10,7 @@ List, create, or delete branches
 #### checkout
 Checkout a branch or paths to the working tree
 
-z3### clone
+#### clone
 Clone a repository into a new directory
 
 #### commit
