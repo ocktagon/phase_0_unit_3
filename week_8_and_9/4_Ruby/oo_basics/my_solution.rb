@@ -1,7 +1,7 @@
 # U3.W8-9: OO Basics: Student
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself].
 
 # 2. Pseudocode
 
@@ -12,10 +12,55 @@
 class Student
   attr_accessor :scores, :first_name
 
-  def initialize(args)   #Use named arguments!
-    #your code here
+  def initialize(first_name, scores)   #Use named arguments!
+    @first_name = first_name
+    @scores = scores
   end
+
+  def average
+  	sum = scores.inject(0, &:+)
+  	avg = sum / scores.length
+  end
+
+  def letter_grade
+    case average
+    when 90..100 then
+      return "A"
+    when 80..89 then
+      return "B"
+    when 70..79 then
+      return "C"
+    when 60..69 then
+      return "D"
+    when 0..59 then
+      return "F"
+    end
+  end
+
 end
+
+def linear_search(list, name)
+# Stuck on this 
+  # unless 
+  #   list.each do |k|
+  #   	list[k].include?(name)
+  #   end
+  # 	return -1
+  # else
+  # 	list.each do |k|
+  # 		return list.index(k) if list[k].first_name == name
+  # 	end
+  # end
+end
+
+
+alex = Student.new("Alex",[100,100,100,0,100])
+aki = Student.new("Aki",[20,80,50,0,40])
+john = Student.new("John",[100,100,100,0,100])
+jake = Student.new("Jake",[100,100,100,0,100])
+jeff = Student.new("Jeff",[100,100,100,0,100])
+
+students = [alex, aki, john, jake, jeff]
 
 
 # 4. Refactored Solution
