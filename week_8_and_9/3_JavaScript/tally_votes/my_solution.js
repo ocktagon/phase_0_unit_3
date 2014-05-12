@@ -1,6 +1,6 @@
 // U3.W8-9: Gradebook from Names and Scores
 
-// I worked on this challenge [by myself, with:]
+// I worked on this challenge [with: Yuzu Saijo]
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -34,10 +34,15 @@ var votes = {
 
 // Tally the votes in voteCount.
 var voteCount = {
-  president: {},
-  vicePresident: {},
-  secretary: {},
-  treasurer: {}
+  president: {"Alex":0, "Bob": 0, "Cindy":0, "Devin":0,"Ernest":0,"Fred":0,"Gail":0,"Hermann":0,"Ivy":0,
+  "John":0, "Kerry":0,"Louise":0, "Mary":0, "Nate":0, "Oscar":0, "Paulina":0, "Quintin":0, "Romanda":0, "Steve": 0, "Tracy": 0, "Ullyses": 0, "Valorie": 0, "Wesley": 0, "Xavier": 0, "Yvonne":0, "Zane": 0},
+
+  vicePresident: {"Alex":0, "Bob": 0, "Cindy":0, "Devin":0,"Ernest":0,"Fred":0,"Gail":0,"Hermann":0,"Ivy":0,
+  "John":0, "Kerry":0,"Louise":0, "Mary":0, "Nate":0, "Oscar":0, "Paulina":0, "Quintin":0, "Romanda":0, "Steve": 0, "Tracy": 0, "Ullyses": 0, "Valorie": 0, "Wesley": 0, "Xavier": 0, "Yvonne":0, "Zane": 0},
+  secretary: {"Alex":0, "Bob": 0, "Cindy":0, "Devin":0,"Ernest":0,"Fred":0,"Gail":0,"Hermann":0,"Ivy":0,
+  "John":0, "Kerry":0,"Louise":0, "Mary":0, "Nate":0, "Oscar":0, "Paulina":0, "Quintin":0, "Romanda":0, "Steve": 0, "Tracy": 0, "Ullyses": 0, "Valorie": 0, "Wesley": 0, "Xavier": 0, "Yvonne":0, "Zane": 0},
+  treasurer: {"Alex":0, "Bob": 0, "Cindy":0, "Devin":0,"Ernest":0,"Fred":0,"Gail":0,"Hermann":0,"Ivy":0,
+  "John":0, "Kerry":0,"Louise":0, "Mary":0, "Nate":0, "Oscar":0, "Paulina":0, "Quintin":0, "Romanda":0, "Steve": 0, "Tracy": 0, "Ullyses": 0, "Valorie": 0, "Wesley": 0, "Xavier": 0, "Yvonne":0, "Zane": 0}
 }
 
 /* The name of each student receiving a vote for an office should become a property 
@@ -64,16 +69,53 @@ var officers = {
 }
 
 // Pseudocode
-
+// within voteCount, create a list including all the names with the default value 0
+// go through votes 
+// everytime there's a count for the name, add one to the hash 
+// resort from highest to lowest
+// return the first element in the hash for each role
+// put the name into the officers hash
 
 // __________________________________________
 // Initial Solution
 
+// Wanted to do a for within a for loop to iterate through each hash per voter, but syntax is not working. 
+
+// for (var key in votes){
+//   for each (var item in votes.key) {
+//     if (item === "Bob"){
+//       voteCount.item.Bob += 1
+//     };
+//     else if (item === "Cindy"){
+//       voteCount.item.Cindy += 1
+//     };
+//   };
+// };
 
 
+for (var key in votes){
 
+  if (votes[key].president === "Bob"){
+... voteCount.president.Bob += 1
+..};
+  else if (votes[key].president === "Cindy")
+    voteCount.president.Cindy += 1
+  };
 
+};
 
+  
+   Object.keys(voteCount.president)[0]; 
+   ==> "Alex"
+
+  // voteCount.president.Alex += 1
+Object.keys(voteCount).forEach(function (key){
+console.log(voteCount[key]);
+});
+
+Object.keys(voteCount.president).forEach(function (key){
+console.log(voteCount.president[key]);
+});
 
 // __________________________________________
 // Refactored Solution
@@ -85,7 +127,14 @@ var officers = {
 
 // __________________________________________
 // Reflection
+// This was the hardest exercise for me to date.  
+// Yuzu and I paired up and we spent most time trying to research how for each loops work.  
+// The approach we got down to was trying to iterate through each key in the vote, and 
+// then possibly nest another for loop within that to go through each key value pair within
+// the vote.  Then if statements would take over to add to the voteCount if the value was there.  
+// We got stuck on appropriate syntax to allow doing this, and ran out of time/sleep.  
 
+// We'll have to try this again when we have more time.  
 
 
 
